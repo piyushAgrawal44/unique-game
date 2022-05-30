@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Hello
+
+    <script>
+
+
+    
+  
+        const api_url ="https://72ih8opnm2.execute-api.ap-south-1.amazonaws.com/live";
+        getapi(api_url);
+   
+    
+    async function getapi(url) {
+    
+        // Storing response
+        const response = await fetch(url, {
+  mode: 'no-cors'
+});
+        
+        // Storing data in form of JSON
+        var data = await response.json();
+        
+        console.log(data);
+       
+    }
+
+
+    
+//     onGet();
+//     function onGet() {
+//     const url = "https://72ih8opnm2.execute-api.ap-south-1.amazonaws.com/live";
+//     var headers =  {'Content-Type':'application/json',
+//                     'Access-Control-Allow-Origin':'*',
+//                     'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'}
+    
+//     fetch(url, {
+//         method : "GET",
+//         mode: 'cors',
+//         headers: headers
+//     })
+//     .then((response) => {
+//         if (!response.ok) {
+//             throw new Error(response.error)
+//         }
+//         return response.json();
+//     })
+//     .then(data => {
+//        console.log(data.messages);
+//     })
+//     .catch(function(error) {
+//         document.getElementById('messages').value = error;
+//     });
+// }
+
+    </script>
+    
+</body>
+</html>

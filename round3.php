@@ -67,7 +67,7 @@ if (isset($_POST["round_win_by"]) && isset($_POST["round_no"])){
         <div class="row lsc_series_meta_row">
           <div class="col-12">
             <span class="lsc_series_meta_detail">Round 3 of 3</span>
-            <span class="lsc_series_meta_title">UEFA Champions League</span>
+            <span class="lsc_series_meta_title">Words Battle</span>
           </div>
         </div>
         <div class="row lsc_match_meta_row mb-0">
@@ -81,7 +81,7 @@ if (isset($_POST["round_win_by"]) && isset($_POST["round_no"])){
             </div>
           </div>
           <div class="col-4 lsc_match_score_meta">
-            <span class="lsc_match_score"><?php echo $_SESSION["total_rounds_win_by_1"];?> - <?php echo $_SESSION["total_rounds_win_by_1"];?></span>
+            <span class="lsc_match_score"><?php echo $_SESSION["total_rounds_win_by_1"];?> - <?php echo 2-$_SESSION["total_rounds_win_by_1"];?></span>
             <!-- <span class="lsc_match_time">90 + 2'</span> -->
           </div>
           <div class="col-4 lsc_team_right">

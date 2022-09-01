@@ -3,7 +3,7 @@
 
 
 var all_chars=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-// console.log(random);
+// // console.log(random);
 var auto_word;
 var char_16=[];
 var word="";
@@ -150,16 +150,24 @@ function player1_turn(){
 function addChar(char,index){
     word=word+char;
     document.getElementsByName('search')[0].value=word;
-    document.getElementsByClassName(index)[0].setAttribute('disabled','disabled');
+    var letterList=document.getElementsByClassName(index);
+    var n=letterList.length;
+    for (let index = n-1; index < n; index++) {
+        letterList[index].setAttribute('disabled','disabled');
+        letterList[index].classList.add('disabled');
+    }
 }
 function cut(){
 
     var temp12=document.getElementsByName('search')[0].value;
-    document.getElementsByClassName(temp12[temp12.length - 1])[0].removeAttribute('disabled','disabled');
+    var letterList=document.getElementsByClassName(temp12[temp12.length - 1]+" disabled");
+    var n=letterList.length;
+    for (let index = n-1; index < n; index++) {
+        letterList[index].removeAttribute('disabled','disabled');
+        letterList[index].classList.remove('disabled');
+    }
     document.getElementsByName('search')[0].value= temp12.slice(0, temp12.length - 1);
     word=temp12.slice(0, temp12.length - 1);
-  
-
 }
 
 async function getWordApi(url) {
@@ -169,7 +177,7 @@ async function getWordApi(url) {
     
     // Storing data in form of JSON
     var data = await response.json();
-    // console.log(data[0].word);
+    // // console.log(data[0].word);
 
     auto_word=data[Math.floor(Math.random() * data.length)].word;
    
@@ -195,8 +203,8 @@ async function getWordApi(url) {
     other_chars.length=count;
 
     char_16 = required_chars.concat(other_chars);
-    console.log(auto_word);
-    console.log(char_16);
+    // console.log(auto_word);
+    // console.log(char_16);
     var btns_row=document.getElementById("btns_row");
     for (var i = char_16.length - 1; i > 0; i--) {
    

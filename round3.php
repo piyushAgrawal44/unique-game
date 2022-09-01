@@ -3,7 +3,7 @@
 if (isset($_POST["round_win_by"]) && isset($_POST["round_no"])){
   session_start();
   if ($_POST["round_win_by"]==1) {
-    $_SESSION["total_rounds_win_by_1"]=2;
+    $_SESSION["total_rounds_win_by_1"]=$_SESSION["total_rounds_win_by_1"]+1;
   }
 }
 
@@ -22,7 +22,7 @@ if (isset($_POST["round_win_by"]) && isset($_POST["round_no"])){
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
   <link rel="stylesheet" href="./index.css">
-  <title>The Game</title>
+  <title>Words Battle</title>
 
   <style>
     #next_round_form {
@@ -81,7 +81,7 @@ if (isset($_POST["round_win_by"]) && isset($_POST["round_no"])){
             </div>
           </div>
           <div class="col-4 lsc_match_score_meta">
-            <span class="lsc_match_score"><?php echo $_SESSION["total_rounds_win_by_1"];?> - <?php echo 2-$_SESSION["total_rounds_win_by_1"];?></span>
+            <span class="lsc_match_score"><?php echo $_SESSION["total_rounds_win_by_1"];?> - <?php echo $_SESSION["total_rounds_win_by_1"];?></span>
             <!-- <span class="lsc_match_time">90 + 2'</span> -->
           </div>
           <div class="col-4 lsc_team_right">

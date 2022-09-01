@@ -3,7 +3,7 @@
 
 
 var all_chars=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-// console.log(random);
+// // console.log(random);
 var auto_word;
 var char_16=[];
 var word="";
@@ -172,7 +172,7 @@ async function getWordApi(url) {
     
     // Storing data in form of JSON
     var data = await response.json();
-    // console.log(data[0].word);
+    // // console.log(data[0].word);
 
     auto_word=data[Math.floor(Math.random() * data.length)].word;
    
@@ -198,8 +198,8 @@ async function getWordApi(url) {
     other_chars.length=count;
 
     char_16 = required_chars.concat(other_chars);
-    console.log(auto_word);
-    console.log(char_16);
+    // console.log(auto_word);
+    // console.log(char_16);
     var btns_row=document.getElementById("btns_row");
     for (var i = char_16.length - 1; i > 0; i--) {
    
